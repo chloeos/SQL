@@ -1,0 +1,23 @@
+- Create a Pet Supply Store Database
+CREATE TABLE Pet_Supplies_Store (id INTEGER PRIMARY KEY, name TEXT, item TEXT, quantity INTEGER, aisle INTEGER, price INTEGER);
+INSERT INTO Pet_Supplies_Store VALUES (1, "Kitty Bang-Bang", "cat food", 10, 1, 23);
+INSERT INTO Pet_Supplies_Store VALUES (2, "Science Diet", "cat food", 8, 1, 30);
+INSERT INTO Pet_Supplies_Store VALUES (3, "Science Diet", "dog food", 9, 2, 30);
+INSERT INTO Pet_Supplies_Store VALUES (4, "Puppy Chow Down", "dog food", 4, 2, 24);
+INSERT INTO Pet_Supplies_Store VALUES (5, "Polly's Diet", "bird food", 9, 4, 35);
+INSERT INTO Pet_Supplies_Store VALUES (6, "Peter's Diet", "rabbit food", 6, 3, 35);
+INSERT INTO Pet_Supplies_Store VALUES (7, "Cat Wand", "cat toy", 13, 1, 12);
+INSERT INTO Pet_Supplies_Store VALUES (8, "KONG Chew Toy", "dog toy", 3, 2, 15);
+INSERT INTO Pet_Supplies_Store VALUES (9, "Vintage Bird Cage", "bird cage", 4, 4, 180);
+INSERT INTO Pet_Supplies_Store VALUES (10, "Straw Bedding", "rabbit bed", 10, 3, 5);
+INSERT INTO Pet_Supplies_Store VALUES (11, "Frozen Mice", "snake food", 20, 5, 18);
+INSERT INTO Pet_Supplies_Store VALUES (12, "Aquarium 16x13", "housing", 7, 6, 50);
+INSERT INTO Pet_Supplies_Store VALUES (13, "Terrarium 20x14", "housing", 5, 5, 55);
+INSERT INTO Pet_Supplies_Store VALUES (14, "Pretty Litter", "cat litter", 19, 1, 34);
+INSERT INTO Pet_Supplies_Store VALUES (15, "Hamster Mania", "hamster tunnels", 5, 3, 25);
+
+- display the database ordered by price
+SELECT * FROM Pet_Supplies_Store ORDER BY price;
+
+- What is the maximum a person can spend within each aisle?
+SELECT name, MAX(price) FROM Pet_Supplies_Store GROUP BY aisle;
